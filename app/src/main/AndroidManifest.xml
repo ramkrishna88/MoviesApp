@@ -12,7 +12,13 @@
         android:theme="@style/Theme.MoviesApp"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.home.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.splashscren.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
