@@ -1,4 +1,4 @@
-package com.example.moviesapp.ui.Login
+package com.example.moviesapp.ui.login
 
 
 import androidx.fragment.app.Fragment

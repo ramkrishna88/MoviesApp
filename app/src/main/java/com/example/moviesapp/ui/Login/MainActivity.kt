@@ -1,10 +1,9 @@
-package com.example.moviesapp.ui.home
+package com.example.moviesapp.ui.login
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.moviesapp.databinding.ActivityMainBinding
-import com.example.moviesapp.ui.Login.FragmentPageAdapter
 import com.google.android.material.tabs.TabLayout
 
 

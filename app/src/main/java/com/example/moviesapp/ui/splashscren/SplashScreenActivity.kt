@@ -1,13 +1,13 @@
 package com.example.moviesapp.ui.splashscren
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.moviesapp.R
 import com.example.moviesapp.databinding.ActivitySplashScreenBinding
-import com.example.moviesapp.ui.home.MainActivity
+import com.example.moviesapp.ui.login.MainActivity
 
 class SplashScreenActivity : AppCompatActivity() {
 
