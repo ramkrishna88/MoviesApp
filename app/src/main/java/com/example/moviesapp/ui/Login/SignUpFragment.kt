@@ -10,7 +10,9 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.moviesapp.R
 import com.example.moviesapp.databinding.FragmentSignUpBinding
 import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SignUpFragment : Fragment() {
 
     private lateinit var binding: FragmentSignUpBinding
