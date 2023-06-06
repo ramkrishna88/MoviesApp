@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/popularmovies_nav"
+    app:startDestination="@id/popularMoviesFragment">
+
+    <fragment
+        android:id="@+id/popularMoviesFragment"
+        android:name="com.example.moviesapp.ui.home.PopularMoviesFragment"
+        android:label="fragment_popular_movies"
+        tools:layout="@layout/fragment_popular_movies">
+        <action
+            android:id="@+id/action_popularMoviesFragment_to_popularMoviesDetailsFragment"
+            app:destination="@id/popularMoviesDetailsFragment">
+            <argument
+                android:name="movieItem"
+                app:argType="com.example.moviesapp.data.model.movies.Movie"/>
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/popularMoviesDetailsFragment"
+        android:name="com.example.moviesapp.ui.moviedetails.PopularMoviesDetailsFragment"
+        android:label="fragment_popular_movies_details"
+        tools:layout="@layout/fragment_popular_movies_details" >
+    </fragment>
+</navigation>

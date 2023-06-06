@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.moviesapp.R
 import com.example.moviesapp.data.model.movies.Movie
 import com.example.moviesapp.databinding.PopularMoviesLayoutBinding
 
@@ -40,6 +41,7 @@ class MoviesAdapter(
         fun bind(movie: Movie, onItemClick: (Movie) -> Unit) {
             binding.tvMovieTitle.text = movie.title
             Glide.with(binding.root).load("https://image.tmdb.org/t/p/w500${movie.posterPath}")
+                .error(R.drawable.ic_error)
                 .into(binding.ivMoviePoster)
 
             binding.ivMoviePoster.setOnClickListener {

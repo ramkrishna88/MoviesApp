@@ -11,7 +11,9 @@ import com.example.moviesapp.R
 import com.example.moviesapp.databinding.FragmentLoginBinding
 import com.example.moviesapp.ui.home.HomeActivity
 import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding

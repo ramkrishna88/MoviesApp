@@ -8,7 +8,9 @@ import com.bumptech.glide.Glide
 import com.example.moviesapp.R
 import com.example.moviesapp.databinding.ActivitySplashScreenBinding
 import com.example.moviesapp.ui.login.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SplashScreenActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashScreenBinding
@@ -19,13 +21,13 @@ class SplashScreenActivity : AppCompatActivity() {
 
         Glide.with(this)
             .asGif()
-            .load(R.raw.movies_gif)
+            .load(R.drawable.video)
             .into(binding.splashScreenImage)
 
         Handler().postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
-        }, 10000)
+        }, 12000)
     }
 }
