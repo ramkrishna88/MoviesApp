@@ -1,4 +1,4 @@
-package com.example.moviesapp.ui.Login
+package com.example.moviesapp.ui.login
 
 import android.content.Intent
 import android.os.Bundle

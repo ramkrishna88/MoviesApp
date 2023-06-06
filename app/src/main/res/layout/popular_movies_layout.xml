@@ -1,0 +1,43 @@
+<androidx.cardview.widget.CardView
+         xmlns:android="http://schemas.android.com/apk/res/android"
+         xmlns:app="http://schemas.android.com/apk/res-auto"
+         xmlns:tools="http://schemas.android.com/tools"
+         android:id="@+id/card_movies"
+         android:layout_width="match_parent"
+         android:layout_height="250dp"
+         android:layout_margin="16dp"
+         android:elevation="16dp"
+         app:cardCornerRadius="16dp">
+
+         <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="250dp">
+
+             <ImageView
+                 android:id="@+id/iv_movie_poster"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:scaleType="centerCrop" />
+
+             <View
+                 android:layout_width="match_parent"
+                 android:layout_height="40dp"
+                 android:layout_alignBottom="@id/iv_movie_poster"
+                 android:background="@drawable/shade" />
+
+             <TextView
+                 android:id="@+id/tv_movie_title"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignBottom="@id/iv_movie_poster"
+                 android:layout_marginStart="16dp"
+                 android:layout_marginTop="8dp"
+                 android:layout_marginBottom="8dp"
+                 android:ellipsize="end"
+                 android:maxLines="1"
+                 android:textColor="#FFF"
+                 android:textSize="20sp"
+                 android:textStyle="bold"
+                 tools:text="Avengers Infinity War" />
+         </RelativeLayout>
+     </androidx.cardview.widget.CardView>
