@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.moviesapp.R
-import com.example.moviesapp.data.model.movies.Movie
+import com.example.moviesapp.data.model.movies.MovieDto
 import com.example.moviesapp.databinding.FragmentPopularMoviesDetailsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -23,8 +23,8 @@ class PopularMoviesDetailsFragment : Fragment() {
     ): View? {
         binding = FragmentPopularMoviesDetailsBinding.inflate(layoutInflater)
 
-        val movieItem = arguments?.getParcelable<Movie>("movieItem")
-        movieItem?.let { movie ->
+        val movieDtoItem = arguments?.getParcelable<MovieDto>("movieItem")
+        movieDtoItem?.let { movie ->
             movie.let {
                 binding.movieDetailsTitle.text = it.title
                 Glide.with(requireContext())
