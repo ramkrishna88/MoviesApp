@@ -1,7 +1,13 @@
 package com.example.moviesapp.di
 
-
+import android.app.Application
+import android.content.Context
+import androidx.room.Room
+import com.example.moviesapp.MoviesApplication
 import com.example.moviesapp.data.api.APIService
+import com.example.moviesapp.data.model.database.AppDatabase
+import com.example.moviesapp.data.model.database.MovieDao
+import com.example.moviesapp.data.repository.movierepository.MoviesRepositoryDatabase
 import com.example.moviesapp.domain.popularmoviesusecase.GetNowPlayingMoviesUseCase
 import dagger.Module
 import dagger.Provides
@@ -20,7 +26,42 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideGetNowPlayingMoviesUseCase(apiService: APIService): GetNowPlayingMoviesUseCase = GetNowPlayingMoviesUseCase(apiService)
+    fun provideGetNowPlayingMoviesUseCase(apiService: APIService): GetNowPlayingMoviesUseCase =
+        GetNowPlayingMoviesUseCase(apiService)
+
+    @Provides
+    @Singleton
+    fun provideMoviesApplication(application: Application): MoviesApplication {
+        return application as MoviesApplication
+    }
+
+    @Provides
+    @Singleton
+    fun provideContext(application: MoviesApplication): Context {
+        return application.applicationContext
+    }
+
+    @Provides
+    @Singleton
+    fun provideAppDatabase(context: Context): AppDatabase {
+        return Room.databaseBuilder(
+            context.applicationContext,
+            AppDatabase::class.java,
+            "movies_db")
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideMovieDao(appDatabase: AppDatabase): MovieDao {
+        return appDatabase.movieDao()
+    }
+
+    @Provides
+    @Singleton
+    fun provideMoviesRepositoryDatabase(movieDao: MovieDao): MoviesRepositoryDatabase {
+        return MoviesRepositoryDatabase(movieDao)
+    }
 
     @Provides
     @Singleton

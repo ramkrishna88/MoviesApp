@@ -15,7 +15,7 @@
             app:destination="@id/popularMoviesDetailsFragment">
             <argument
                 android:name="movieItem"
-                app:argType="com.example.moviesapp.data.model.movies.Movie"/>
+                app:argType="com.example.moviesapp.data.model.movies.MovieDto"/>
         </action>
     </fragment>
     <fragment
