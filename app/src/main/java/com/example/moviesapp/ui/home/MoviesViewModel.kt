@@ -25,10 +25,10 @@ class MoviesViewModel @Inject constructor(
     private val moviesRepositoryDatabase: MoviesRepositoryDatabase
 ) : ViewModel() {
 
-    private val _movies = MutableLiveData<List<MovieDto>>()
+    val _movies = MutableLiveData<List<MovieDto>>()
     val movies: LiveData<List<MovieDto>> = _movies
 
-    private val _uiState = MutableLiveData<UIState<Any>>()
+    val _uiState = MutableLiveData<UIState<Any>>()
     val uiState: LiveData<UIState<Any>> get() = _uiState
     val moviesDatabase: Flow<List<MovieLocal>> get() = moviesRepositoryDatabase.getAllMovies()
 
@@ -53,7 +53,7 @@ class MoviesViewModel @Inject constructor(
     }
 
     @SuppressLint("SuspiciousIndentation")
-    private fun parseResponse(response: String?): MoviesResponse {
+    fun parseResponse(response: String?): MoviesResponse {
         return try {
             val newResponse = Gson()
             val movie = newResponse.fromJson(response, MoviesResponse::class.java)
@@ -63,7 +63,7 @@ class MoviesViewModel @Inject constructor(
         }
     }
 
-    private fun MovieDto.toMovieLocal(): MovieLocal {
+    fun MovieDto.toMovieLocal(): MovieLocal {
         return MovieLocal(
             id = id,
             title = title,
